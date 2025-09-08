@@ -1,0 +1,6 @@
+name: contact Form
+description: It will create a contact Form.
+package: custom
+type: module
+core_version_requirement: ^9 || ^10 || ^11
+version: ^1.0

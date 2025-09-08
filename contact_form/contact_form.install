@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * It will intsll the contact form Module schema
+ */
+
+/**
+ * Implement hook_schema()
+ *
+ */
+
+function contact_form_schema(){
+    $schema['contact_form'] = [
+        'fields' => [
+            'fid' => [
+                'type' => 'serial',
+                'not null' => TRUE,
+            ],
+            'name' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ],
+            'email' => [
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => TRUE,
+            ],
+            'mobile_number' => [
+                'type' => 'varchar',
+                'length' => 15,
+                'not null' => FALSE,
+            ],
+            'message' => [
+                'type' => 'text',
+                'length' => 255,
+                'not null' => FALSE,
+            ],
+            'created' => [
+                'type' => 'int',
+                'not null' => TRUE,
+            ],
+        ],
+        'primary key' => ['fid'],
+    ];
+
+    return $schema;
+}

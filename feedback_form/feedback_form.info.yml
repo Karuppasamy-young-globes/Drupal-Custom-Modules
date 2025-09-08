@@ -1,0 +1,6 @@
+name: Feedback Form
+description: It will create a feedback form for the user.
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10 || ^11
+version: ^1.0

@@ -1,0 +1,6 @@
+name: Time
+description: It will create a time block .
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10 || ^11
+version: ^1.0

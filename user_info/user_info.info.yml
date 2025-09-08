@@ -1,0 +1,6 @@
+name: User Info
+description: It will display the user Destails on a Page.
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10 || ^11
+version: ^1.0

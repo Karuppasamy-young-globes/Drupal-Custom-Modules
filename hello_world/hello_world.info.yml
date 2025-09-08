@@ -1,0 +1,6 @@
+name: Hello world
+description: It will provied a Hello Msg of /hello page
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10 || ^11
+version: ^1.0
