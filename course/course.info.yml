@@ -1,0 +1,6 @@
+name: "Course Management System"
+type: module
+package: Custom
+description: "It Provide a Course Management System Data."
+core_version_requirement: ^9 || ^10 || ^11
+version: 1.0

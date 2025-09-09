@@ -1,0 +1,6 @@
+course.courses:
+  title: "Courses"
+  description: "It will provide the list of all courses"
+  route_name: entity.course.collection
+  parent: system.admin_content
+  weight: 10

@@ -1,0 +1,40 @@
+entity.course.collection:
+  path: '/admin/content/courses'
+  defaults:
+    _title: "Courses"
+    _entity_list: 'course'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.course.add_form:
+  path: '/course/add'
+  defaults:
+    _title: "Courses"
+    _entity_form: 'course.add'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.course.edit_form:
+  path: '/course/{course}/edit'
+  defaults:
+    _title: "Courses"
+    _entity_form: 'course.edit'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.course.delete_form:
+  path: '/course/{course}/delete'
+  defaults:
+    _title: "Courses"
+    _entity_form: 'course.delete'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.course.canonical:
+  path: "/course/{course}"
+  defaults:
+    _title: ""
+    _entity_view: 'course'
+  requirements:
+    _permission: 'administer site configuration'
+
