@@ -1,0 +1,19 @@
+add course:
+  title: "Add a Course"
+  description: "Anyone can add a Course"
+  restrict: FALSE
+
+edit course:
+  title: "Edit a Course"
+  description: "Accessed person only edit any Course"
+  restrict: FALSE
+
+delete course:
+  title: "Delete Course"
+  description: "Accessed Persion only Delete Course"
+  restrict: TRUE
+
+view course:
+  title: "View Course"
+  description: "Any One Can View Course"
+  restrict: FALSE

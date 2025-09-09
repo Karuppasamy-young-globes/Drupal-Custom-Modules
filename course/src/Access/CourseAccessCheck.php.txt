@@ -1,0 +1,22 @@
+<?php
+
+namespace Drupal\course\Access;
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
+
+class CourseAccessCheck {
+
+  /**
+   * Custom access check for editing a course.
+   */
+  public function checkEditAccess(Course $course, AccountInterface $account): AccessResult {
+
+    if ($account->hasPermission('edit course')) {
+      return AccessResult::allowed();
+    }
+
+    return AccessResult::forbidden();
+  }
+
+}

@@ -12,7 +12,7 @@ entity.course.add_form:
     _title: "Courses"
     _entity_form: 'course.add'
   requirements:
-    _permission: 'administer site configuration'
+    _permission: 'add course'
 
 entity.course.edit_form:
   path: '/course/{course}/edit'
@@ -20,7 +20,7 @@ entity.course.edit_form:
     _title: "Courses"
     _entity_form: 'course.edit'
   requirements:
-    _permission: 'administer site configuration'
+   _permission: 'add edit'
 
 entity.course.delete_form:
   path: '/course/{course}/delete'
@@ -28,13 +28,14 @@ entity.course.delete_form:
     _title: "Courses"
     _entity_form: 'course.delete'
   requirements:
-    _permission: 'administer site configuration'
+    _permission: 'delete course'
 
-entity.course.canonical:
-  path: "/course/{course}"
+course.summary:
+  path: '/course/summary/{course}'
   defaults:
-    _title: ""
-    _entity_view: 'course'
+    _controller: '\Drupal\course\Controller\CourseSummaryController::view'
+    _title: 'Course Summary'
   requirements:
-    _permission: 'administer site configuration'
+    _permission: 'view course'
+    course: \d+
 
