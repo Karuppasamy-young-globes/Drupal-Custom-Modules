@@ -20,11 +20,12 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *     },
  *     "list_builder" = "Drupal\course\CourseListBuilder",
  *     "view_builder" = "Drupal\course\CourseViewBuilder",
- *     "access" = "Drupal\Core\Entity\EntityAccessControlHandler",
+ *     "access" = "Drupal\course\Access\CourseAccessControlHandler",
  *   },
  *   entity_keys = {
  *     "id" = "id",
- *     "label" = "course_name"
+ *     "label" = "course_name",
+ *     "uid" = "owner_id"
  *   },
  *   links = {
  *     "canonical" = "/course/{course}",
@@ -112,6 +113,19 @@ class Course extends ContentEntityBase {
         'type' => 'boolean',
       ])
       ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['owner_id'] = baseFieldDefinition::create('entity_reference')
+      ->setLabel(t('User Id'))
+      ->setDescription(t("This will stores the content owner ID"))
+      ->setSetting('target_type', 'user')
+      ->setDefaultValue(\Drupal::currentUser()->id())
+      ->setDisplayOptions('view',[
+        'label' => 'above',
+        'type' => 'author',
+      ])
+
+      ->setDisplayConfigurable('form', FALSE)
       ->setDisplayConfigurable('view', TRUE);
 
     return $fields;

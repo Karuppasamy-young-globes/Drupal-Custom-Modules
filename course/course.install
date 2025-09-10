@@ -37,6 +37,10 @@ function course_schema() {
         'not null' => TRUE,
         'default' => 1,
       ],
+      'owner_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
     ],
     'primary key' => ['id'],
   ];

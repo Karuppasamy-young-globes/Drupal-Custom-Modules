@@ -36,7 +36,15 @@ class CourseForm extends ContentEntityForm {
       ]));
     }
 
+  $account = \Drupal::currentUser();
+
+  if ($account->id() == 1) {
     $form_state->setRedirect('entity.course.collection');
+  }
+  else {
+    $form_state->setRedirect('<front>');
+  }
+
   }
 
 }

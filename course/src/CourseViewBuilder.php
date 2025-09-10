@@ -23,7 +23,7 @@ class CourseViewBuilder extends EntityViewBuilder {
 
     $build['course_name'] = [
       '#type' => 'markup',
-      '#markup' => 'Name: ' . $entity->get('course_name')->value . '</p>',
+      '#markup' => '<p>Name: ' . $entity->get('course_name')->value . '</p>',
     ];
 
     $build['description'] = [

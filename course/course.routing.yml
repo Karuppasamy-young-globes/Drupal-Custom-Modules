@@ -6,36 +6,43 @@ entity.course.collection:
   requirements:
     _permission: 'administer site configuration'
 
-entity.course.add_form:
-  path: '/course/add'
-  defaults:
-    _title: "Courses"
-    _entity_form: 'course.add'
-  requirements:
-    _permission: 'add course'
-
-entity.course.edit_form:
-  path: '/course/{course}/edit'
-  defaults:
-    _title: "Courses"
-    _entity_form: 'course.edit'
-  requirements:
-   _permission: 'add edit'
-
-entity.course.delete_form:
-  path: '/course/{course}/delete'
-  defaults:
-    _title: "Courses"
-    _entity_form: 'course.delete'
-  requirements:
-    _permission: 'delete course'
-
 course.summary:
   path: '/course/summary/{course}'
   defaults:
     _controller: '\Drupal\course\Controller\CourseSummaryController::view'
     _title: 'Course Summary'
   requirements:
-    _permission: 'view course'
+    _entity_access: 'course.view'
     course: \d+
+
+entity.course.canonical:
+  path: '/course/{course}'
+  defaults:
+    _entity_view: "course"
+  requirements:
+    _entity_access: 'course.view'
+
+entity.course.add_form:
+  path: '/course/add'
+  defaults:
+    _entity_form: 'course.add'
+    _title: 'Add Course'
+  requirements:
+    _entity_create_access: 'course'
+
+entity.course.edit_form:
+  path: '/course/{course}/edit'
+  defaults:
+    _entity_form: 'course.edit'
+    _title: 'Edit Course'
+  requirements:
+    _entity_access: 'course.update'
+
+entity.course.delete_form:
+  path: '/course/{course}/delete'
+  defaults:
+    _entity_form: 'course.delete'
+    _title: 'Delete Course'
+  requirements:
+    _entity_access: 'course.delete'
 
