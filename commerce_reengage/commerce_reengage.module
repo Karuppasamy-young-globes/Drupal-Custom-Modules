@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function commerce_reengage_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.commerce_reengage':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<h5>' . t('Commerce Reengage') . '</h5>';
+      $output .= '<pre>' . t('The Abandoned Cart module helps recover lost sales by sending automated cart reminder emails. 
+It includes 3 predefined rules (1 hour, 1 day, 1 week) and built-in email templates with product details, discounts, and checkout links. 
+You can customize templates, track email history, and measure the effectiveness of your retargeting strategy—all while engaging customers in a friendly, brand-focused way.') . '</pre>' ;
+      return $output;
+  }
+}

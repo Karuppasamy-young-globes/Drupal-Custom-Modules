@@ -1,0 +1,8 @@
+name: 'Commerce Reengage'
+type: module
+description: 'It provides a Reengagement To Coustomer To remaind the cart added products'
+package: Custom
+core_version_requirement: ^9 || ^10 || ^11
+version: '1.0'
+dependencies:
+  - commerce:commerce_checkout

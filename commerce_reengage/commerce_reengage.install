@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * Implement hook_schema()
+ * 
+ */
+
+function commerce_reengage_schema(){
+    $schema['rules'] = [
+        'description' => 'This table will create a Commerce reengage module rules',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'not null' => TRUE
+            ],
+            'role_name' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'status' => [
+                'type' => 'int',
+                'size' => 'tiny',
+                'not null' => TRUE,
+                'default' => 0
+            ],
+            'delivery_time' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE
+            ],
+            'discount_rule' => [
+                'type' => 'int',
+                'length' => 3,
+                'not null' => FALSE
+            ]
+        ]
+    ];
+
+    return $schema;
+}
