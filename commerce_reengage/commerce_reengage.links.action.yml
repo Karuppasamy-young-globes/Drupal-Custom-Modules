@@ -1,0 +1,5 @@
+commerce_reengage.add-form:
+  route_name: commerce_reengage.add-form
+  title: 'Add Course'
+  appears_on:
+    - commerce_reengage.collection

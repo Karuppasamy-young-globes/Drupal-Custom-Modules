@@ -1,0 +1,6 @@
+commerce_reengage:
+  title: "Commerce Reengage"
+  description: "It will provide the list of all rule for the Commerce Reengage"
+  route_name: commerce_reengage.collection
+  parent: system.admin_content
+  weight: 11

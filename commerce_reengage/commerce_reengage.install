@@ -6,36 +6,58 @@
  */
 
 function commerce_reengage_schema(){
-    $schema['rules'] = [
-        'description' => 'This table will create a Commerce reengage module rules',
-        'fields' => [
-            'id' => [
-                'type' => 'serial',
-                'not null' => TRUE
-            ],
-            'role_name' => [
-                'type' => 'varchar',
-                'length' => 255,
-                'not null' => TRUE
-            ],
-            'status' => [
-                'type' => 'int',
-                'size' => 'tiny',
-                'not null' => TRUE,
-                'default' => 0
-            ],
-            'delivery_time' => [
-                'type' => 'varchar',
-                'length' => 255,
-                'not null' => TRUE
-            ],
-            'discount_rule' => [
-                'type' => 'int',
-                'length' => 3,
-                'not null' => FALSE
-            ]
-        ]
-    ];
+  $schema['rules'] = [
+    'description' => 'This table will create a Commerce reengage module rules',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary Key',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'role_name' => [
+        'description' => 'Role name',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'status' => [
+        'description' => 'Status',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'delivery_time' => [
+        'description' => 'Delivery time',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'discount_rule' => [
+        'description' => 'Discount rule',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+      'created' => [
+        'description' => 'Created at',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'changed' => [
+        'description' => 'Modified at',
+        'type' => 'varchar',
+        'length' => 255
+      ],
+      'priority' => [
+        'description' => 'Priority',
+        'type' => 'int',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
 
-    return $schema;
+  return $schema;
 }
+

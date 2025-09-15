@@ -1,0 +1,23 @@
+commerce_reengage.collection:
+  path: '/admin/content/commerce_reengage'
+  defaults:
+    _entity_list: commerce_reengage
+    _title: "Rules"
+  requirements:
+    _permission: "Access content"
+
+commerce_reengage.add-form:
+  path: '/commerce_reengage/add'
+  defaults:
+    _entity_form: commerce_reengage.add
+    _title: "Add Rules"
+  requirements:
+    _permission: "Access Content"
+
+commerce_reengage.edit-form:
+  path: '/commerce_reengage/{commerce_reengage}/edit'
+  defaults: 
+    _entity_form: commerce_reengage.edit
+    _title: "Edit Rules"
+  requirements:
+    _permission: "Access Content"
